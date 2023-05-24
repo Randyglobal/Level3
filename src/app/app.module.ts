@@ -33,6 +33,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatDividerModule} from '@angular/material/divider';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 
@@ -48,6 +49,7 @@ import {MatDividerModule} from '@angular/material/divider';
     FooterComponent,
     SigninComponent,
     SignupComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,24 @@
 <app-nav-bar></app-nav-bar>
 <!-- Registration -->
-<form #registerForm="ngForm" (ngSubmit)="signin(registerForm.value)" action="" method="post">
-    <div class="form-control">
+<div class="form-controls">
+  <form #registerForm="ngForm" (ngSubmit)="signin(registerForm.value)" action="" method="post">
+    <h1>LogIn</h1>
+    <div class="form-control control">
       <label for="">Email:</label><br>
       <input type="email" ngModel name="email" placeholder="Enter Email">
     </div>
+    <br>
     <div class="form-control">
       <label for="">password:</label><br>
       <input type="password" ngModel name="password" placeholder="Enter Password">
     </div>
     <div class="btn">
-      <div routerLink="/signup" class="Signup">
+      <div routerLink="/signup" class="Signup button-one">
         SignUp
       </div>
-      <button class="SignIn">
+      <button class="SignIn button-two">
         Signin
       </button>
     </div>
   </form>
+</div>

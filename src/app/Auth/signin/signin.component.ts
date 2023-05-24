@@ -17,6 +17,7 @@ export class SigninComponent {
       .then((respond: any) => {
         console.log(respond.user);
         alert('welcome' + respond.user)
+        window.location.replace('http://localhost:4200/tasklist')
       })
       .catch((err) => {
         alert(err.message)

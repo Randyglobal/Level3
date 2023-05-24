@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss','../signin/signin.component.scss']
 })
 export class SignupComponent {
 
@@ -17,6 +17,7 @@ export class SignupComponent {
     .then((respond: any) =>{
        console.log(respond.user);
        alert('Successfully Registered')
+       window.location.replace('http://localhost:4200/tasklist')
       })
        .catch((err) => {
         alert(err.message)   
