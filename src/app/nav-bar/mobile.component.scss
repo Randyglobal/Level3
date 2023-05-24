@@ -1,0 +1,64 @@
+@media (max-width: 500px) {
+    mat-toolbar{
+        background: rgb(5, 64, 21);
+        height: 60px;
+            
+            .nav-container{
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+                height: inherit;
+                margin: 0px auto;
+                color: white;
+        
+                .logo{
+                    cursor: pointer;
+                    h1{
+                        margin-top: 15px;
+                        font-size: 40px;
+                        font-weight: 600;
+                    }
+                    .description{
+                        position: relative;
+                        top: -80px;
+                        left: 32px;
+                        color: orange;
+                    }
+                    .academy{
+                        position: relative;
+                        width: 3px;
+                        height: 30px;
+                        top: -45px;
+                        left: 24px;
+                        transform: rotate(170deg);
+                        background: orange;
+                    }
+                }
+                .mobile-icon{
+                    display: none;
+                }
+                .beating-icon{
+                    display: none;
+                }
+        
+                ul{
+                    position: relative;
+                    display: block;
+                    padding-top: 20px;
+                    li{
+                        list-style: none;
+                        display: inline;
+                        margin-left: 20px;
+                        a{
+                            text-decoration: none;
+                            font-size: 19px;
+                            color: white;
+                          &:hover{
+                            color: orange;
+                          }
+                        }
+                    }
+                }
+            }
+        }
+}

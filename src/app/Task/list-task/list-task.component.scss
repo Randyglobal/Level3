@@ -1,5 +1,39 @@
-button{
-    margin-top: 20px;
-    margin-right: 80px;
-    background: rgba(47, 255, 54, 0.447);
+.addView {
+    width: 90%;
+    margin: 15px auto;
+    button {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 10px;
+        background: rgba(47, 255, 54, 0.447);
+    }
+}
+
+.table-body {
+    width: 90%;
+    margin: 10px auto;
+    border: 1px solid green;
+    margin-top: 90px;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    table{
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        width: 100%;
+        // color: gray;
+        color: black;
+        text-align: center;
+
+       th:hover{
+        cursor: pointer;
+        color: orange;
+        text-decoration: dotted;
+    }
+    td{
+        background: rgb(211, 211, 211);
+    }
+    }
 }

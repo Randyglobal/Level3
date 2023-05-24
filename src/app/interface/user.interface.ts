@@ -1,10 +1,9 @@
 export interface Itask{
-   id: string,
    name: string,
    status: string,
    difficulty: string,
    level: string,
-   stateDate: string
+   startDate: string
 }
 export interface Iuser{
     email: string,

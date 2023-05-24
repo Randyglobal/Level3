@@ -1,1 +1,19 @@
 <app-nav-bar></app-nav-bar>
+<form #registerForm="ngForm" (ngSubmit)="signup(registerForm.value)" action="" method="post">
+    <div class="form-control">
+      <label for="">Email:</label><br>
+      <input type="email" ngModel name="email" placeholder="Enter Email">
+    </div>
+    <div class="form-control">
+      <label for="">password:</label><br>
+      <input type="password" ngModel name="password" placeholder="Enter Password">
+    </div>
+    <div class="btn">
+      <button class="Signup">
+        SignUp
+      </button>
+      <div routerLink="/signin" class="SignIn">
+        Signin
+      </div>
+    </div>
+  </form>

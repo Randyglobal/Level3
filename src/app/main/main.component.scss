@@ -1,0 +1,39 @@
+.banner{
+    width: 100%;
+    height: 85vh;
+    background-image: url(../../assets/img/SevenKidsCode6-1024x683.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .container{
+        width: inherit;
+        height: inherit;
+        background: rgba(0, 92, 0, 0.427);
+        text-align: center;
+
+        h1{
+            color: white;
+            font-size: 60px;
+            padding-top: 12rem;
+        }
+        p{
+            font-size: 20px;
+            color: orange;
+        }
+        button{
+            padding: 10px;
+            font-size: 17px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            &:hover{
+                background: orange;
+                color: green;
+                margin-top: -2px;
+                transition: 1s;
+            }
+        }
+    }
+}

@@ -1,1 +1,77 @@
-<p>edit-task works!</p>
+<section>
+    <div mat-dialog-title>
+        <h1>{{title}}</h1>
+    </div>
+    <form #addForm="ngForm" (ngSubmit)="updateData(addForm.value)">
+    <div mat-dialog-content class="content">
+        <div class="rows">
+            <mat-form-field appearance="outline">
+                <mat-label>
+                    Task Id
+                </mat-label>
+                <input matInput  ngModel name="id" type="text" placeholder="W50TE">
+            </mat-form-field>
+            <mat-form-field appearance="outline" >
+                <mat-label>
+                    Task Name
+                </mat-label>
+                <input matInput ngModel name="name" type="text" placeholder="Web-Dev">
+            </mat-form-field>
+        </div>
+        <div class="rows">
+            <mat-form-field appearance="outline">
+                <mat-label>
+                    Status
+                </mat-label>
+                <mat-select ngModel name="status" >
+                    <mat-option *ngFor="let value of status" [value]="value">
+                        {{value | titlecase}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="rows">
+            <mat-form-field appearance="outline" >
+                <mat-label>
+                    Difficulty
+                </mat-label>
+                <mat-select ngModel name="difficulty">
+                    <mat-option *ngFor="let value of difficulty" [value]="value">
+                        {{value | titlecase}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="rows">
+            <mat-form-field appearance="outline" >
+                <mat-label>
+                    Level
+                </mat-label>
+                <mat-select  ngModel name="level" >
+                    <mat-option *ngFor="let value of level" [value]="value">
+                        {{value | titlecase}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="rows">
+            <mat-form-field appearance="outline" >
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker"  ngModel name="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="btn">
+       <button mat-stroked-button color="warn" type="button" mat-dialog-close="false">
+         Cancel
+       </button>
+       <!-- update button -->
+       <button mat-stroked-button color="primary">
+        Update
+      </button>
+    </div>
+    </form>
+</section>

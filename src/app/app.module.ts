@@ -31,6 +31,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 
@@ -66,7 +68,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

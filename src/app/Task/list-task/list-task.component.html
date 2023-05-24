@@ -1,4 +1,64 @@
 <app-nav-bar></app-nav-bar>
-     <button mat-raised-button color="primary" (click)="openTaskForm()" style="background: rgba(0, 128, 0, 0.668); float: right;">
-      Add Task +
-     </button>
+<div class="addView">
+<button mat-raised-button color="primary" (click)="openTaskForm()"
+    style="background: rgba(0, 128, 0, 0.668); float: left;">
+    Add Task +
+</button>
+<button mat-raised-button color="primary" (click)="getData()"
+    style="background: rgba(0, 128, 0, 0.668); float: right;">
+    View Task
+</button>
+</div>
+
+<div class="table-body">
+    <mat-form-field>
+      <mat-label>
+        Search Task
+      </mat-label>
+      <input matInput (keyup)="applyFilter($event)" type="text" #input>
+    </mat-form-field>
+
+      <table>
+       <tr style="margin-left: 30rem;">
+        <th>Id</th>
+        <th>Task Name</th>
+        <th> Status</th>
+        <th> Difficulty</th>
+        <th>Level</th>
+        <th>Start Date</th>
+        <th>Action</th>
+       </tr>
+       <tr *ngFor="let i = index; let item of data">
+        <td>{{i}}</td>
+        <td> {{item.name | titlecase}} </td>
+        <td> {{item.status | titlecase}} </td>
+        <td> {{item.difficulty | titlecase}} </td>
+        <td> {{item.level | titlecase}} </td>
+        <td> {{item.date}} </td>
+        <td> 
+            <button mat-icon-button color="primary" (click)="openEditForm()">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteTask(item.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+        </td>
+       </tr>
+
+        <!-- <ng-container matColumnDef="action">
+            <button mat-icon-button color="primary">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+        </ng-container> -->
+
+        <tr mat-header-row *matHeaderRowDef="displayTask"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayTask;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+ 

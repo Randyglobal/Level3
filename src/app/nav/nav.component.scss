@@ -44,6 +44,10 @@ mat-toolbar{
                 position: relative;
                 display: block;
                 padding-top: 10px;
+
+                .nav-component{
+                    display: inline;
+                }
                 li{
                     list-style: none;
                     display: inline;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Firestore, addDoc, collection } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, getDocs } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Itask } from 'src/app/interface/user.interface';
 import { LocalService } from 'src/app/service/store/local.service';
@@ -14,17 +14,17 @@ export class AddTaskComponent {
 
   task: Itask = 
     {
-      id: '',
       name: '',
       status: '',
       difficulty: '',
       level: '',
-      stateDate: ''
+      startDate: ''
     }
 
   title = 'Add Task'
   // step 1
   taskForm: FormGroup
+  // public data: any = []
   // Step 2
   //when we want to bind with our component
   constructor( private formGroup: FormBuilder,
@@ -63,10 +63,11 @@ export class AddTaskComponent {
 
   addData(value: any) {
    this.storage.addTask(this.task);
-   const addTasks = collection(this.firestore, 'Task');
+   const addTasks = collection(this.firestore, 'ITask');
    addDoc(addTasks, value)
    .then((respond)=> {
     alert('Added Task Successfully')
+    window.location.reload()
    })
    .catch((error) => {
     alert('Opps an error occured => ' + error)
