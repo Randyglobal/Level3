@@ -1,0 +1,25 @@
+<mat-toolbar>
+    <div class="nav-container">
+        <div class="logo" routerLink="/main">
+            <h1 >{{logo | uppercase}}</h1><p class="academy"></p><p class="description">{{name}}</p>
+        </div>
+        <!-- <div class="mobile-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </div> -->
+        <div class="beating-icon">
+            <i class="fa-solid fa-bars fa-beat-fade"></i>
+        </div>
+        <ul class="nav-elements">
+            <li class="nav-list">
+                <a routerLink="/main" class="nav-link">Home</a>
+            </li>
+            <li class="nav-list">
+                <a routerLink="/main" class="nav-link" (click)="toggle()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</mat-toolbar>
+
